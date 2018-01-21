@@ -27,9 +27,9 @@ public class Dashboard extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: complete this.
-                Snackbar.make(view, "Add ", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                return;
+                // TODO: Uncomment this once the thing is ready.
+//                startActivity(new Intent(Dashboard.this, RecordedFoodActivity.class));
             }
         });
 
