@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
@@ -26,38 +27,114 @@ public class Dashboard extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(Dashboard.this, RecordedFood.class));
             }
         });
+
+        // TODO: Replace fillers.
+        int caloriesConsumed = 400;
+        int caloriesLeft = 1600;
+
+        int regularCarbs = 200;
+        int naturalSugars = 100;
+        int addedSugars = 50;
+        int carbsLeft = 20;
+
+        int protein = 300;
+        int proteinLeft = 400;
+
+        int transFat = 20;
+        int saturatedFat = 10;
+        int otherFats = 30;
+        int fatsLeft = 5;
 
         WebView webview = (WebView) findViewById(R.id.webView1);
         String content = "<html>"
                 + "  <head>"
-                + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
+                + "    <script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>"
                 + "    <script type=\"text/javascript\">"
                 + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
-                + "      google.setOnLoadCallback(drawChart);"
-                + "      function drawChart() {"
+                + "      google.setOnLoadCallback(drawCharts);"
+
+                + "      function drawCharts() {"
+                + "         drawPieChart(); drawBarCharts(); }"
+
+                + "      function drawPieChart() {"
                 + "        var data = google.visualization.arrayToDataTable(["
-                + "          ['Year', 'Sales', 'Expenses'],"
-                + "          ['2010',  1000,      400],"
-                + "          ['2011',  1170,      460],"
-                + "          ['2012',  660,       1120],"
-                + "          ['2013',  1030,      540]"
+                + "          ['Category', 'Calories'], "
+                + "          ['Calories Consumed'," + caloriesConsumed + "],"
+                + "          ['Calories Left'," + caloriesLeft + "]"
                 + "        ]);"
                 + "        var options = {"
-                + "          title: 'Truiton Performance',"
-                + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
+                + "          pieHole: 0.6,"
+                + "          reverseCategories: true,"
+                + "          slices: [{color: '#cccccc'}, {color: 'green'}],"
+                + "          legend: 'none',"
+                + "          chartArea: {width: '100%', height: '100%'},"
+                + "          pieSliceText: 'value',"
                 + "        };"
-                + "        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));"
+                + "        var chart = new google.visualization.PieChart(document.getElementById('calories_pie'));"
                 + "        chart.draw(data, options);"
                 + "      }"
+
+                + "     function drawBarCharts() {" +
+                "           var options = {" +
+                "               isStacked: 'percent'," +
+                "               vAxis: {" +
+//                "                   gridlines: {color: 'transparent'}," +
+//                "                   textPosition: 'none'," +
+                "                       count: 2" +
+                "               }," +
+                "               hAxis: {" +
+                "                   gridlines: {color: 'transparent'}," +
+                "                   baseline: {color: 'transparent'}," +
+                "                   textPosition: 'none'" +
+                "               }," +
+                "               legend: {position: 'top', maxLines: 1}," +
+                "               chartArea: {width: '100%', height: '50%'}" +
+                "            };" +
+
+                "           var carbsData = google.visualization.arrayToDataTable([" +
+                "               ['', 'Regular', 'Natural Sugars', 'Added Sugars', 'Remaining', ], " +
+                "               [''," + regularCarbs + "," + naturalSugars + "," + addedSugars + "," + carbsLeft + "]" +
+                "           ]);" +
+
+                "           var proteinData = google.visualization.arrayToDataTable([" +
+                "               ['', 'Consumed', 'Remaining'], " +
+                "               [''," + protein + "," + proteinLeft + "]" +
+                "           ]);" +
+
+                "           var fatsData = google.visualization.arrayToDataTable([" +
+                "               ['', 'Trans Fat', 'Saturated Fat', 'Other', 'Remaining', ], " +
+                "               [''," + transFat + "," + saturatedFat + "," + otherFats + "," + fatsLeft + "]" +
+                "           ]);" +
+
+                "           var carbsChart = new google.visualization.BarChart(document.getElementById('carbs'));" +
+                "           carbsChart.draw(carbsData, options);" +
+
+                "           var proteinChart = new google.visualization.BarChart(document.getElementById('protein'));" +
+                "           proteinChart.draw(proteinData, options);" +
+
+                "           var fatsChart = new google.visualization.BarChart(document.getElementById('fats'));" +
+                "           fatsChart.draw(fatsData, options);" +
+                "       }"
                 + "    </script>"
                 + "  </head>"
-                + "  <body>"
-                + "    <div id=\"chart_div\" style=\"width: 1000px; height: 500px;\"></div>"
-                + "	   <img style=\"padding: 0; margin: 0 0 0 330px; display: block;\" src=\"truiton.png\"/>"
+                + "  <body>" +
+                "       <style>" +
+                "           h3 { margin-top: 10vh;}" +
+                "       </style>"
+                + "    <h3 style=\"text-align: center\">Today's Caloric Consumption</h3>"
+                + "    <div id=\"calories_pie\"></div>"
+
+                + "    <h3 style=\"text-align: center\">Carbohydrate Consumption</h3>"
+                + "    <div id=\"carbs\"></div>"
+
+                + "    <h3 style=\"text-align: center\">Protein Consumption</h3>"
+                + "    <div id=\"protein\"></div>"
+
+                + "    <h3 style=\"text-align: center\">Fat Consumption</h3>"
+                + "    <div id=\"fats\"></div>"
                 + "  </body>" + "</html>";
 
         WebSettings webSettings = webview.getSettings();
