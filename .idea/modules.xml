@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\pikac\nutri-scan\app\app.iml" filepath="C:\Users\pikac\nutri-scan\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/nutri-scan.iml" filepath="$PROJECT_DIR$/nutri-scan.iml" />
+      <module fileurl="file://C:\Users\pikac\nutri-scan\nutri-scan.iml" filepath="C:\Users\pikac\nutri-scan\nutri-scan.iml" />
     </modules>
   </component>
 </project>

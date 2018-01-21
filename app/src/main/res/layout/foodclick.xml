@@ -8,57 +8,62 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="135dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginTop="62dp"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
         android:inputType="textPersonName"
         android:text="Name: "
         android:textSize="7pt"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="99dp" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="165dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="280dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="34dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nutritional Values"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintEnd_toEndOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="175dp"
+        android:layout_width="191dp"
+        android:layout_height="237dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="19dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText5"
-        android:layout_width="235dp"
-        android:layout_height="212dp"
+        android:layout_width="170dp"
+        android:layout_height="208dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="312dp" />
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="323dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="21dp"
+        android:layout_height="585dp"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editText" />
 
 </android.support.constraint.ConstraintLayout>

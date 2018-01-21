@@ -19,8 +19,14 @@ import java.util.ArrayList;
 public class AnimatedPieChart extends AppCompatActivity {
 
     private static String TAG = "PieChart";
+    private int totalCal = 10;
+    private int newCal = 5;
+    public void setCals(int tc, int nc) {
+        totalCal = tc;
+        newCal = nc;
+    }
 
-
+    /*
     // Input from current calories intake for today
     TextView num1 = (TextView)findViewById(R.id.num1);
     String totalCalories= num1.getText().toString();
@@ -30,6 +36,7 @@ public class AnimatedPieChart extends AppCompatActivity {
     TextView num2 = (TextView)findViewById(R.id.num2);
     String newCalories= num2.getText().toString();
     int newCal=Integer.parseInt(newCalories);
+    */
 
     // Total of new consumption of calories
     int newTotalCal;
