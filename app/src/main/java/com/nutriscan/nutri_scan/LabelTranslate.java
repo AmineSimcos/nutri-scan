@@ -66,23 +66,13 @@ public class LabelTranslate {
                     ("{\"requests\":  [{ \"features\":  [ {\"type\": \"TEXT_DETECTION\""
                             + "}], \"image\": {\"content\": " + filePath + "  }}}]}");
             output = bw.toString();
-        } catch(MalformedURLException ex) {
+        } catch (MalformedURLException ex) {
             ex.printStackTrace();
-        } catch(IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         return output;
     }
-    /*
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-    */
 
 
 }
