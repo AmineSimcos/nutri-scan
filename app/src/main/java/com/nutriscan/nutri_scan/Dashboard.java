@@ -27,9 +27,7 @@ public class Dashboard extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                return;
-                // TODO: Uncomment this once the thing is ready.
-//                startActivity(new Intent(Dashboard.this, RecordedFoodActivity.class));
+                startActivity(new Intent(Dashboard.this, RecordedFood.class));
             }
         });
 
