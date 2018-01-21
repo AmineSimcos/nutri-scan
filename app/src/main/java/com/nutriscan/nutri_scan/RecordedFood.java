@@ -22,12 +22,14 @@ public class RecordedFood extends AppCompatActivity {
         rv = findViewById(R.id.food_recycler_view);
         rv.setHasFixedSize(true);
 
-        LinearLayoutManager llm = new LinearLayoutManager(rv.getContext());
+        Context context = rv.getContext();
+
+        LinearLayoutManager llm = new LinearLayoutManager(context);
         rv.setLayoutManager(llm);
 
         initializeData(); // To populate foodItems
 
-        rv.setAdapter(new RVAdapter(foodItems));
+        rv.setAdapter(new RVAdapter(foodItems, context));
     }
 
 
@@ -38,19 +40,41 @@ public class RecordedFood extends AppCompatActivity {
         foodItems = new ArrayList<>();
 
 
-        HashMap<String, Integer> stats = new HashMap<>();
+        HashMap<String, Integer> stats1 = new HashMap<>();
+        HashMap<String, Integer> stats2 = new HashMap<>();
+        HashMap<String, Integer> stats3 = new HashMap<>();
 
-        stats.put("calories", 1);
-        stats.put("addedSugar", 1);
-        stats.put("otherSugar", 1);
-        stats.put("carbs", 1);
-        stats.put("protein", 1);
-        stats.put("transFat", 1);
-        stats.put("saturatedFat", 1);
-        stats.put("otherFat", 1);
+        stats1.put("calories", 1);
+        stats1.put("addedSugar", 1);
+        stats1.put("otherSugar", 1);
+        stats1.put("carbs", 1);
+        stats1.put("protein", 1);
+        stats1.put("transFat", 1);
+        stats1.put("saturatedFat", 1);
+        stats1.put("otherFat", 1);
+
+        stats2.put("calories", 2);
+        stats2.put("addedSugar", 1);
+        stats2.put("otherSugar", 1);
+        stats2.put("carbs", 1);
+        stats2.put("protein", 1);
+        stats2.put("transFat", 1);
+        stats2.put("saturatedFat", 1);
+        stats2.put("otherFat", 1);
+
+        stats3.put("calories", 3);
+        stats3.put("addedSugar", 1);
+        stats3.put("otherSugar", 1);
+        stats3.put("carbs", 1);
+        stats3.put("protein", 1);
+        stats3.put("transFat", 1);
+        stats3.put("saturatedFat", 1);
+        stats3.put("otherFat", 1);
 
 
-        foodItems.add(new Food("Emma Wilson", stats, 1));
+        foodItems.add(new Food("FOOD", stats1, 1));
+        foodItems.add(new Food("Apple", stats2, 1));
+        foodItems.add(new Food("Yay", stats3, 1));
     }
 }
 

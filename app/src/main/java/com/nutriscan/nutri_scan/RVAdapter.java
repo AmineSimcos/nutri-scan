@@ -1,9 +1,11 @@
 package com.nutriscan.nutri_scan;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Map;
@@ -14,9 +16,11 @@ import java.util.Map;
 
 public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder>{
     List<Food> foodList;
+    Context context;
 
-    RVAdapter(List<Food> foodList) {
+    RVAdapter(List<Food> foodList, Context context) {
         this.foodList = foodList;
+        this.context = context;
     }
 
     @Override
@@ -38,11 +42,20 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder>{
 
         holder.foodDetails.setText(statsString);
 //        holder.foodPhoto.setImageResource(foodList.get(position).photoId);
+
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: set this to the intnt thing
+                Toast.makeText(context, "Index position is: ", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return foodList.size();
+
     }
 
 }
