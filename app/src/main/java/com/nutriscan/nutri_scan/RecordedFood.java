@@ -23,15 +23,7 @@ public class RecordedFood extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Remove title bar
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-        //Remove notification bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_recorded_food);
-
-
 
         rv = findViewById(R.id.food_recycler_view);
         rv.setHasFixedSize(true);
@@ -47,10 +39,9 @@ public class RecordedFood extends AppCompatActivity {
 
         FloatingActionButton toCameraView = (FloatingActionButton) findViewById(R.id.camera_button);
         toCameraView.setOnClickListener(new View.OnClickListener() {
-            // TODO: Change GoogleVision.class to <camera activity>.class
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RecordedFood.this, GoogleVision.class));
+                startActivity(new Intent(RecordedFood.this, Cam.class));
             }
         });
     }
