@@ -2,24 +2,14 @@ package com.nutriscan.nutri_scan;
 
 import android.content.Context;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.support.design.widget.FloatingActionButton;
-=======
-import android.icu.text.AlphabeticIndex;
->>>>>>> 59eaca7d62f7900a66c7201f77b425c7d31bb533
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-<<<<<<< HEAD
-import android.view.View;
-=======
-import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
->>>>>>> 59eaca7d62f7900a66c7201f77b425c7d31bb533
 
 import java.util.ArrayList;
 import java.util.HashMap;
