@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
@@ -31,33 +32,38 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        int caloriesConsumed = 400;
+        int caloriesLeft = 1600;
+
         WebView webview = (WebView) findViewById(R.id.webView1);
         String content = "<html>"
                 + "  <head>"
-                + "    <script type=\"text/javascript\" src=\"jsapi.js\"></script>"
+                + "    <script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>"
                 + "    <script type=\"text/javascript\">"
                 + "      google.load(\"visualization\", \"1\", {packages:[\"corechart\"]});"
                 + "      google.setOnLoadCallback(drawChart);"
                 + "      function drawChart() {"
                 + "        var data = google.visualization.arrayToDataTable(["
-                + "          ['Year', 'Sales', 'Expenses'],"
-                + "          ['2010',  1000,      400],"
-                + "          ['2011',  1170,      460],"
-                + "          ['2012',  660,       1120],"
-                + "          ['2013',  1030,      540]"
+                + "          ['Category', 'Calories'], "
+                + "          ['Calories Consumed'," + caloriesConsumed + "],"
+                + "          ['Calories Left'," + caloriesLeft + "]"
                 + "        ]);"
                 + "        var options = {"
-                + "          title: 'Truiton Performance',"
-                + "          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}"
+                + "          pieHole: 0.6,"
+                + "          reverseCategories: true,"
+                + "          slices: [{color: '#cccccc'}, {color: 'green'}],"
+                + "          legend: 'none',"
+                + "          chartArea: {width: '100%', height: '100%'},"
+                + "          pieSliceText: 'value',"
                 + "        };"
-                + "        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));"
+                + "        var chart = new google.visualization.PieChart(document.getElementById('calories_pie'));"
                 + "        chart.draw(data, options);"
                 + "      }"
                 + "    </script>"
                 + "  </head>"
                 + "  <body>"
-                + "    <div id=\"chart_div\" style=\"width: 1000px; height: 500px;\"></div>"
-                + "	   <img style=\"padding: 0; margin: 0 0 0 330px; display: block;\" src=\"truiton.png\"/>"
+                + "    <h3 style=\"text-align: center\">Today's Caloric Consumption</h3>"
+                + "    <div id=\"calories_pie\"></div>"
                 + "  </body>" + "</html>";
 
         WebSettings webSettings = webview.getSettings();
