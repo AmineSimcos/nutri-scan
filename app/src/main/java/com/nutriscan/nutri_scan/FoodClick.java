@@ -11,9 +11,12 @@ public class FoodClick extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_click);
+
+
+        ImageView myImageView = (ImageView) findViewById(R.id.imageView);
+        myImageView.setImageResource(R.drawable.ic_launcher_background);
     }
 
-    ImageView myImageView = (ImageView) findViewById(R.id.myImageView);
-    myImageView.setImageResource(R.drawable.android_background);
+
 
 }

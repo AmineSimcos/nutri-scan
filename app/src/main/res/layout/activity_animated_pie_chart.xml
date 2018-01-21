@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nutriscan.nutri_scan.AnimatedPieChart">
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/idPieChart"
+        android:layout_width="303dp"
+        android:layout_height="408dp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="16dp"></com.github.mikephil.charting.charts.PieChart>
+
+    <TextView
+        android:id="@+id/newTotalCal"
+        android:layout_width="302dp"
+        android:layout_height="66dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="485dp" />
+
+</android.support.constraint.ConstraintLayout>
