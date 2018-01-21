@@ -1,10 +1,15 @@
 package com.nutriscan.nutri_scan;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +22,16 @@ public class RecordedFood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_recorded_food);
+
+
 
         rv = findViewById(R.id.food_recycler_view);
         rv.setHasFixedSize(true);
@@ -30,10 +44,16 @@ public class RecordedFood extends AppCompatActivity {
         initializeData(); // To populate foodItems
 
         rv.setAdapter(new RVAdapter(foodItems, context));
+
+        FloatingActionButton toCameraView = (FloatingActionButton) findViewById(R.id.camera_button);
+        toCameraView.setOnClickListener(new View.OnClickListener() {
+            // TODO: Change GoogleVision.class to <camera activity>.class
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RecordedFood.this, GoogleVision.class));
+            }
+        });
     }
-
-
-
 
     // TODO: use real stored data, not static ones.
     private void initializeData() {
