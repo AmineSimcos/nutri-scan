@@ -47,6 +47,8 @@ public class AnimatedPieChart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //displays the total calories consumption
+        displayCalories(totalCal,newCal);
         //calculates calories consumption
         totalCalories(totalCal,newCal);
 
@@ -69,13 +71,17 @@ public class AnimatedPieChart extends AppCompatActivity {
         addDataSet();
 
     }
-    public void totalCalories(int currentCal, int newCal){
-
-        //adds the current calories and new calories together to get the new total calories consumption
-        newTotalCal = currentCal + newCal;
+    void displayCalories(int currentCal, int newCal){
 
         //output print for the new total consumption underneath the pie chart
-        displayTotalCal.setText("The total calories of consumption is now: " + newTotalCal);
+        displayTotalCal.setText("The total calories of consumption is now: " + totalCalories(currentCal,newCal));
+
+    }
+
+    int totalCalories(int currentCal, int newCal){
+        //adds the current calories and new calories together to get the new total calories consumption
+        newTotalCal = currentCal + newCal;
+        return newTotalCal;
 
     }
 
