@@ -92,7 +92,7 @@ public class Dashboard extends AppCompatActivity {
                 "                   baseline: {color: 'transparent'}," +
                 "                   textPosition: 'none'" +
                 "               }," +
-                "               legend: {position: 'bottom', maxLines: 1}," +
+                "               legend: {position: 'top', maxLines: 1}," +
                 "               chartArea: {width: '100%', height: '50%'}" +
                 "            };" +
 
@@ -124,7 +124,7 @@ public class Dashboard extends AppCompatActivity {
                 + "  </head>"
                 + "  <body>" +
                 "       <style>" +
-                "           h3 { margin-top: 5vh;}" +
+                "           h3 { margin-top: 10vh;}" +
                 "       </style>"
                 + "    <h3 style=\"text-align: center\">Today's Caloric Consumption</h3>"
                 + "    <div id=\"calories_pie\"></div>"
