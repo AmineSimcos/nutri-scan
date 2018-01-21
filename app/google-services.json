@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1028548836728-98orco4utrsivckqs3901j26pm97ffh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nutriscan.nutri_scan",
+            "certificate_hash": "77b10ae893e737e0a5f1847ead3e9ee744dbbd47"
+          }
+        },
+        {
           "client_id": "1028548836728-m1tke1qugl142at1rbad8bi40dhb9ot0.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028548836728-m1tke1qugl142at1rbad8bi40dhb9ot0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
