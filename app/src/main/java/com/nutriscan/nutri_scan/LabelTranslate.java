@@ -73,7 +73,7 @@ public class LabelTranslate {
         }
         return output;
     }
-
+    /*
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private void dispatchTakePictureIntent() {
@@ -82,6 +82,7 @@ public class LabelTranslate {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+    */
 
 
 }
