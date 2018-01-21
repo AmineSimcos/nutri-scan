@@ -1,10 +1,13 @@
 package com.nutriscan.nutri_scan;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +33,15 @@ public class RecordedFood extends AppCompatActivity {
         initializeData(); // To populate foodItems
 
         rv.setAdapter(new RVAdapter(foodItems, context));
+
+        FloatingActionButton toCameraView = (FloatingActionButton) findViewById(R.id.camera_button);
+        toCameraView.setOnClickListener(new View.OnClickListener() {
+            // TODO: Change GoogleVision.class to <camera activity>.class
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RecordedFood.this, GoogleVision.class));
+            }
+        });
     }
 
 
